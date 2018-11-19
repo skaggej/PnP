@@ -1993,10 +1993,10 @@
   <wsdl:service name="UserProfileService">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">User Profile Service</wsdl:documentation>
     <wsdl:port name="UserProfileServiceSoap" binding="tns:UserProfileServiceSoap">
-      <soap:address location="https://bertonline-admin.sharepoint.com/_vti_bin/userprofileservice.asmx" />
+      <soap:address location="https://catdsgfusedev1-admin.sharepoint.com/_vti_bin/userprofileservice.asmx" />
     </wsdl:port>
     <wsdl:port name="UserProfileServiceSoap12" binding="tns:UserProfileServiceSoap12">
-      <soap12:address location="https://bertonline-admin.sharepoint.com/_vti_bin/userprofileservice.asmx" />
+      <soap12:address location="https://catdsgfusedev1-admin.sharepoint.com/_vti_bin/userprofileservice.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-  <tenantName>contoso.onmicrosoft.com</tenantName>
-  <pictureSourceCsv>c:\temp\userlist.csv</pictureSourceCsv>
-  <thumbs upload3Thumbs="true" createSMLThumbs="true"/> 
+  <tenantName>catdsgfusedev1.onmicrosoft.com</tenantName>
+  <pictureSourceCsv>D:\Source\Workspaces\PnP\Samples\Core.ProfilePictureUploader\userlist.csv</pictureSourceCsv>
+  <targetLibraryPath>/User Photos/Profile Pictures</targetLibraryPath>
+  <thumbs upload3Thumbs="true" createSMLThumbs="false"/> 
   <additionalProfileProperties>
     <property name="SPS-PictureExchangeSyncState" value="0"/>
   </additionalProfileProperties>

@@ -117,6 +117,8 @@ namespace Contoso.Core.ProfilePictureUploader
 
 
             LogMessage("Processing finished for " + count + " user profiles (or so)", LogLevel.Information);
+
+            Console.ReadLine();
         }
 
 
@@ -230,7 +232,6 @@ namespace Contoso.Core.ProfilePictureUploader
         /// <returns></returns>
         static MemoryStream GetImagefromHTTPUrl(string imageUrl)
         {
-
             if (_sourceUserName.Length > 0)
                 return GetImagefromHTTPUrl(_sourceUserName, _sourcePassword, imageUrl);
             else
@@ -266,7 +267,7 @@ namespace Contoso.Core.ProfilePictureUploader
                 MemoryStream tmpStream = new MemoryStream();
                 imageStream.CopyTo(tmpStream);
                 tmpStream.Seek(0, SeekOrigin.Begin);
-                //LogMessage("Finished fetching image from URL " + imageUrl, LogLevel.Information);
+                LogMessage("Finished fetching image from URL " + imageUrl, LogLevel.Information);
                 return tmpStream;
             }
             catch (WebException ex)
@@ -331,7 +332,7 @@ namespace Contoso.Core.ProfilePictureUploader
                 {
                     //not pretty code below, but works. Upload same source image 3 times, but with different name
                     // no resizing of any images
-                    LogMessage("Uploading threes image to SPO, no resize", LogLevel.Information);
+                    LogMessage("Uploading three images to SPO, no resize", LogLevel.Information);
 
                     spImageUrl = string.Format(spPhotoPathTempate, PictureName, "M");
                     LogMessage("Uploading medium image to " + spImageUrl, LogLevel.Information);
@@ -351,7 +352,7 @@ namespace Contoso.Core.ProfilePictureUploader
                 }
                 else if (_appConfig.Thumbs.Upload3Thumbs && _appConfig.Thumbs.CreateSMLThumbs) //generate 3 different size thumbs
                 {
-                    LogMessage("Uploading threes image to SPO, with resizing", LogLevel.Information);
+                    LogMessage("Uploading three images to SPO, with resizing", LogLevel.Information);
                     //create 3 images based on recommended sizes for SPO
                     //create small size,                   
                     using (Stream smallThumb = ResizeImageSmall(ProfilePicture, _smallThumbWidth))
@@ -418,7 +419,7 @@ namespace Contoso.Core.ProfilePictureUploader
             try
             {
                 OriginalImage.Seek(0, SeekOrigin.Begin);
-                Image originalImage = Image.FromStream(OriginalImage, true, true);
+                Image originalImage = Image.FromStream(OriginalImage, false, false);
                 if (originalImage.Width == NewWidth) //if sourceimage is same as destination, no point resizing, as it loses quality
                 {
                     OriginalImage.Seek(0, SeekOrigin.Begin);

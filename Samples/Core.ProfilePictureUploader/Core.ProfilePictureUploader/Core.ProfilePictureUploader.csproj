@@ -176,10 +176,10 @@
     <None Include="Web References\UPSvc\userprofileservice.disco" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="https://bertonline-admin.sharepoint.com/_vti_bin/userprofileservice.asmx">
+    <WebReferenceUrl Include="https://catdsgfusedev1-admin.sharepoint.com/_vti_bin/userprofileservice.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\UPSvc\</RelPath>
-      <UpdateFromURL>https://bertonline-admin.sharepoint.com/_vti_bin/userprofileservice.asmx</UpdateFromURL>
+      <UpdateFromURL>https://catdsgfusedev1-admin.sharepoint.com/_vti_bin/userprofileservice.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
